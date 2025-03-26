@@ -2,23 +2,22 @@
 <details open>
 <summary>Wireframe - Welcome Page</summary>
   
-![Screenshot 2025-03-26 113936](https://github.com/user-attachments/assets/96bef7f5-ea8f-4cb7-8f13-56bd79193865)
+![Screenshot 2025-03-26 140150](https://github.com/user-attachments/assets/2c00e1fb-9762-48af-82a9-70b3a14ddc61)
 
 </details>
 
 <details>
 <summary>Wireframe - Sign in</summary>
 
-![Screenshot 2025-03-26 114651](https://github.com/user-attachments/assets/4cf1ed73-5484-4e5d-b260-abc29ac3347e)
-
+![Screenshot 2025-03-26 140822](https://github.com/user-attachments/assets/bbc0a8f5-6f2d-4842-896f-003a1e6e4e2c)
 
 </details>
-
 
 <details>
 <summary>Wireframe - Register</summary>
 
-![Screenshot 2025-03-26 115420](https://github.com/user-attachments/assets/939b8d34-b276-4f22-8ab7-001393a1889b)
+![Screenshot 2025-03-26 140723](https://github.com/user-attachments/assets/b7257e43-e055-4dce-91e6-07351ebb770c)
+
 
 
 </details>
@@ -26,7 +25,7 @@
 <details>
 <summary>Wireframe - Main page and pop up window</summary>
 
-![Screenshot 2025-03-26 115547](https://github.com/user-attachments/assets/55c8efe8-bda3-4bcc-b49d-9c2904060c43)
+![Screenshot 2025-03-26 140459](https://github.com/user-attachments/assets/dec6576f-a039-472f-8fa1-8765198809d7)
 
 
 </details>
@@ -34,7 +33,8 @@
 <details>
 <summary>Wireframe - Sign out</summary>
 
-![Screenshot 2025-03-26 115614](https://github.com/user-attachments/assets/4d408d4a-59cd-4844-b15a-267d938f62f4)
+![Screenshot 2025-03-26 140649](https://github.com/user-attachments/assets/97457920-760a-4dd3-898d-d4b9f7d98286)
+
 
 
 </details>
