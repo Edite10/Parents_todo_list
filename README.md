@@ -118,6 +118,13 @@ The website will serve as a simple, intuitive, and collaborative to-do list for 
 
 </details>
 
+## Surface
+
+### Colour Scheme 
+
+![Screenshot 2025-03-27 134508](https://github.com/user-attachments/assets/7ce31ec4-cabf-4ef7-937b-be9828669b77)
+
+
 ## Data model example
 
 ```
