@@ -1,0 +1,28 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="text">Task Description:</label>
+    <input type="text" id="text" name="text" required><br>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="CHORES">Chores</option>
+        <option value="KIDS">Kids</option>
+        <option value="ERRANDS">Errands</option>
+        <option value="SELF_CARE">Self-Care</option>
+    </select><br>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="TODO">To Do</option>
+        <option value="IN_PROGRESS">In Progress</option>
+        <option value="DONE">Done</option>
+    </select><br>
+
+    <label for="due_date">Due Date:</label>
+    <input type="datetime-local" id="due_date" name="due_date"><br>
+
+    <label for="assigned_to">Assigned To:</label>
+    <input type="text" id="assigned_to" name="assigned_to"><br>
+
+    <button type="submit">Create Task</button>
+</form>
