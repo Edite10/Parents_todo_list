@@ -1,1 +1,1 @@
-web: gunicorn pizza_me.wsgi
+web: gunicorn todo.wsgi
