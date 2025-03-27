@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from .models import Task
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def login_view(request):
 
 
 def logout(request):
-    return render(request, "todo/logout.html")  
+    return render(request, "todo/logout.html")
 
 
 def signup(request):
@@ -66,3 +67,22 @@ def create_todo(request):
 
     # Render the form template if the request is GET
     return render(request, "todo/create_todo.html")
+
+def update_todo(request, task_id):
+    # Retrieve the task object or return a 404 if not found
+    task = get_object_or_404(Task, id=task_id)
+
+    if request.method == "POST":
+        # Update the task with the submitted form data
+        task.text = request.POST.get("text")
+        task.category = request.POST.get("category")
+        task.status = request.POST.get("status")
+        task.due_date = request.POST.get("due_date")
+        task.assigned_to = request.POST.get("assigned_to")
+        task.save()  # Save the updated task to the database
+
+        # Redirect to a success page or the task list
+        return redirect("task_list")  # Replace 'task_list' with your URL name for the list view
+
+    # Render the form template with the current task data
+    return render(request, "todo/update_todo.html", {"task": task})
