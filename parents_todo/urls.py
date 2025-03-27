@@ -28,6 +28,6 @@ urlpatterns = [
     path('todo', include('todo.urls')),   # Include todo app's URLs
     path('templates/', include('django.contrib.auth.urls')),
 
-    path("", include("todo.urls") name="todo"),
+    path("", include("todo.urls"), name="todo"),
 
 ]
