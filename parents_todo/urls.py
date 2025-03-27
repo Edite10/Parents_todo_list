@@ -28,4 +28,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('todo', include('todo.urls')),   # Include todo app's URLs
     path('templates/', include('django.contrib.auth.urls')),
+
 ]
