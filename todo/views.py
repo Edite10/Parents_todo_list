@@ -67,4 +67,10 @@ def create_todo(request):
     # Render the form template if the request is GET
     return render(request, "todo/create_todo.html")
 def welcome_page(request):
-    return render(request, 'welcome.html')
+    return render(request, 'todo/welcome.html')
+
+def sign_in(request):
+    return render(request, 'todo/sign_in.html')
+
+def register(request):
+    return render(request, 'todo/register.html')

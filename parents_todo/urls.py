@@ -24,10 +24,11 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='landing.html'), name='landing'),
     path('home', views.home, name='home'),
     path("admin/", admin.site.urls),
+    path('welcome-page/', views.welcome_page, name='welcome_page'),  # Welcome page
+    path('sign-in/', views.sign_in, name='sign_in'),    # Sign In page
+    path('register/', views.register, name='register'), # Register page
 
-    path('todo', include('todo.urls')),   # Include todo app's URLs
+    path("todo", include("todo.urls"), name="todo"),   # Include todo app's URLs
     path('templates/', include('django.contrib.auth.urls')),
-
-    path("", include("todo.urls") name="todo"),
 
 ]
