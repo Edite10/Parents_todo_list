@@ -39,7 +39,7 @@ def signup(request):
 
 
 def home(request):
-    return render(request, "todo/home.html")
+    return render(request, "base.html")
 from .models import Task  # Import your Task model
 from django.http import HttpResponse
 
