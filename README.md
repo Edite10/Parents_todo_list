@@ -1,3 +1,82 @@
+
+## User Experience (UX)
+
+### Primary Goal
+
+The website will serve as a simple, intuitive, and collaborative to-do list for parents to manage household tasks efficiently. It will have a family-friendly and visually organized interface with a mobile-first design, ensuring accessibility from any device.
+
+### First-Time Users
+
+- New users will find a clean and organized layout that makes it easy to add and manage tasks.
+- New users will be able to quickly create an account and set up their first task list.
+- New users will receive a brief guided walkthrough of key features (e.g., task creation, reminders, collaboration).
+- New users will be able to invite family members to collaborate on shared tasks.
+- New users will have the option to customize their to-do board (e.g., colors, categories) to fit their needs.
+
+
+### Returning Users
+
+- Returning users will automatically see their active tasks upon logging in.
+- Returning users will be able to quickly access tasks from their last session without extra steps.
+- Returning users will have the ability to filter or search for tasks based on priority, due date, or assignee.
+- Returning users will be able to review completed and overdue tasks to track progress.
+- Returning users will stay updated with push notifications or reminders for upcoming tasks.
+
+### Collaboration & Family Engagement
+
+- Parents can assign tasks to specific family members, ensuring shared responsibilities.
+- Parents and family members can leave comments on tasks to communicate details or updates.
+- Parents can track which tasks have been completed by family members.
+
+### Customization & Usability
+
+- Users can drag and drop tasks to update their status quickly.
+- Users can customize task categories to fit their unique workflow.
+- Users can choose between light and dark modes for better accessibility.
+- Users can set recurring tasks for daily, weekly, or monthly chores.
+
+### Mobile Accessibility & Notifications
+
+- The website will be mobile-friendly, allowing parents to manage tasks on the go.
+- Users can receive push notifications for task reminders and updates.
+- Users will have a quick-add button to create tasks easily from any device.
+
+## Creation Process
+
+1. Stretegy
+   - We need a website that is family-friendly and easy to use for busy parents.
+   - The interface should be clean, intuitive, and visually organized for quick task management.
+   - It should support collaborative features so family members can share responsibilities.
+   - The design should be minimalistic but engaging, making daily task tracking stress-free.
+
+2. Scope
+   - The website should be fully responsive, working seamlessly across desktop, tablet, and mobile devices.
+   - Users should be able to create, edit, and delete tasks effortlessly.
+   - Users should be able to set priorities, deadlines, and reminders for their tasks.
+   - The website should include a help section with guides on using features efficiently.
+  
+3. Structural
+   - The website will have a table-based layout to display tasks clearly, with columns for task name, status (To-Do, In Progress, Done), and actions.
+   - Users can update task status by selecting checkboxes in the corresponding columns.
+   - A search bar at the top will allow users to quickly find tasks by keyword.
+   - A "Create new task" button will trigger a pop-up form, where users can enter the task name, category, status, and end date.
+   - The action buttons (View, Edit, Delete) will allow users to manage tasks efficiently without unnecessary navigation.
+   - The website will have a fixed sign-out button for easy access to log out.
+   - The design will prioritize clarity and simplicity, making it easy for parents to track, update, and organize their tasks.
+
+4. Skeleton
+   - The website will have a main dashboard displaying a table with task names, status columns (To-do, In Progress, Done), and action buttons.
+   - Users will be able to check off tasks in the respective status columns to update progress.
+   - A search bar will be present at the top to quickly find tasks.
+   - A "Create new task" button will open a pop-up form, allowing users to enter task details such as name, category, status, and due date.
+   - Each task will have three action buttons:
+                     - View (for details
+                     - Edit (to modify task information)
+                     - Delete (to remove a task)
+   - A Sign-out button will be available for account security.
+   - The overall design will be clean, minimalistic, and user-friendly, ensuring easy task management for parents.
+
+
 ## Wireframes 
 <details open>
 <summary>Wireframe - Welcome Page</summary>

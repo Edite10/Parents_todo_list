@@ -7,3 +7,13 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('signup/', views.signup, name='signup'),
 ]
+
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+    path("create/",
+         views.create_todo,
+         name='create_todo'),
+]
+
