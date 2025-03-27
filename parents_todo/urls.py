@@ -21,13 +21,11 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='landing.html'), name='landing'),
+    path('', TemplateView.as_view(
+        template_name='landing.html'),
+        name='landing'),
     path('home', views.home, name='home'),
     path("admin/", admin.site.urls),
-
     path('todo', include('todo.urls')),   # Include todo app's URLs
     path('templates/', include('django.contrib.auth.urls')),
-
-    path("", include("todo.urls") name="todo"),
-
 ]
