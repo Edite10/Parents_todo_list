@@ -1,0 +1,25 @@
+<!-- filepath: c:\wamp64\www\Projects\ParentsToDo\Parents_todo_list\todo\templates\todo\task_delete.html -->
+{% extends "base.html" %}
+
+{% block title %}Delete Task{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Confirm Deletion</h2>
+    </div>
+    <div class="card-body">
+        <p>Are you sure you want to delete the task: <strong>{{ task.text }}</strong>?</p>
+        <p><strong>Category:</strong> {{ task.get_category_display }}</p>
+        <p><strong>Status:</strong> {{ task.get_status_display }}</p>
+        <p><strong>Due Date:</strong> {{ task.due_date|date:"D, M d, Y H:i" }}</p>
+    </div>
+    <div class="card-footer">
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'view' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
