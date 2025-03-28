@@ -37,7 +37,7 @@ def create_todo(request):
         )
 
         # Redirect to a success page or the main task list
-        return redirect("view")  # Replace 'task_list' with your URL name for the list view
+        return redirect("view")
     # Render the form template if the request is GET
     return render(request, "todo/create_todo.html")
 def welcome_page(request):
@@ -61,7 +61,7 @@ def update_todo(request, task_id):
         task.save()  # Save the updated task to the database
 
         # Redirect to a success page or the task list
-        return redirect("task_list")  # Replace 'task_list' with your URL name for the list view
+        return redirect("view") 
 
     # Render the form template with the current task data
     return render(request, "todo/update_todo.html", {"task": task})
@@ -82,7 +82,7 @@ def task_delete(request, task_id):
         # Delete the task from the database
         task.delete()
         # Redirect to the task list after deletion
-        return redirect("task_list")  # Replace 'task_list' with your URL name for the list view
+        return redirect("view")
 
     # Render a confirmation page
     return render(request, "todo/task_delete.html", {"task": task})
