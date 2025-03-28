@@ -16,4 +16,6 @@ urlpatterns = [
     path("delete/<int:task_id>/",
          views.task_delete,
          name="task_delete"),
+     path("accounts/", include("allauth.urls")),
+     path("welcome/", views.welcome, name="welcome"),
 ]

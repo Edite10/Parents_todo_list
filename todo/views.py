@@ -40,7 +40,7 @@ def create_todo(request):
         return redirect("view")
     # Render the form template if the request is GET
     return render(request, "todo/create_todo.html")
-def welcome_page(request):
+def welcome(request):
     return render(request, 'todo/welcome.html')
 
 def sign_in(request):
