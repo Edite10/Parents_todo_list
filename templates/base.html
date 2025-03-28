@@ -16,38 +16,16 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-            <a class="navbar-brand" href="{% url 'task_list' %}">To-do List</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle me-1"></i>{{ user.username }}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}"><i class="bi bi-box-arrow-in-right me-1"></i>Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}"><i class="bi bi-person-plus me-1"></i>Register</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+
     </header>
 
     <main class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <form method="GET" action="{% url 'task_list' %}" class="d-flex w-50">
+            <form method="GET" action="{% url 'view' %}" class="d-flex w-50">
                 <input type="text" name="search" class="form-control me-2" placeholder="Search tasks..." value="{{ request.GET.search }}">
                 <button type="submit" class="btn btn-outline-secondary">Search</button>
             </form>
-            <a href="{% url 'task_create' %}" class="btn btn-primary">Create New Task</a>
+            <a href="{% url 'create_todo' %}" class="btn btn-primary">Create New Task</a>
         </div>
 
         {% if messages %}
@@ -60,37 +38,10 @@
                 {% endfor %}
             </div>
         {% endif %}
-
-        <table class="table table-bordered text-center">
-            <thead>
-                <tr>
-                    <th>Task Name</th>
-                    <th>To-do</th>
-                    <th>In Progress</th>
-                    <th>Done</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for task in tasks %}
-                <tr>
-                    <td>{{ task.name }}</td>
-                    <td><input type="radio" name="status_{{ task.id }}" value="To-do" {% if task.status == 'To-do' %}checked{% endif %}></td>
-                    <td><input type="radio" name="status_{{ task.id }}" value="In Progress" {% if task.status == 'In Progress' %}checked{% endif %}></td>
-                    <td><input type="radio" name="status_{{ task.id }}" value="Done" {% if task.status == 'Done' %}checked{% endif %}></td>
-                    <td>
-                        <a href="{% url 'task_detail' task.id %}" class="btn btn-info btn-sm">View</a>
-                        <a href="{% url 'task_update' task.id %}" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="{% url 'task_delete' task.id %}" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="5">No tasks found.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+        
     </main>
 
     <footer class="text-center py-3 mt-4 bg-light">

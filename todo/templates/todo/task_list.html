@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Parents ToDO Task List Page{% endblock title %}
+{% block description %}Parents ToDO Task List Page{% endblock description %}
+{% block keywords %}Parents, ToDo, Task List{% endblock keywords %}
+{% block content %}
+{% load static %}
+
+    <h1>Task List</h1>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>To-do</th>
+                <th>In Progress</th>
+                <th>Done</th>
+                <th>Category</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.text }}</td>
+                <td><input type="radio" name="status_{{ task.id }}" value="To-do" {% if task.status == 'TODO' %}checked{% endif %}></td>
+                <td><input type="radio" name="status_{{ task.id }}" value="In Progress" {% if task.status == 'IN_PROGRESS' %}checked{% endif %}></td>
+                <td><input type="radio" name="status_{{ task.id }}" value="Done" {% if task.status == 'DONE' %}checked{% endif %}></td>
+                <td>{{ task.category }}</td>
+                <td>
+                    <a href="{% url 'task_detail' task.id %}" class="btn btn-info btn-sm">View</a>
+                    <a href="{% url 'update_todo' task.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'task_delete' task.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No tasks found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
