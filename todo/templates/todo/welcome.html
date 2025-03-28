@@ -1,19 +1,13 @@
 {% extends "base.html" %}
+{% block content %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
     <h1>Welcome to the Parents' To-Do List App!</h1>
     <p>This is the welcome page of your application.</p>
     
     <div>
-        <a href="{% url 'sign_in' %}">Sign In</a>
-        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'account_login'%}">Sign In</a>
+        <a href="{% url 'account_signup'%}">Register</a>
     </div>
-</body>
-</html>
+
+{% endblock content %}
