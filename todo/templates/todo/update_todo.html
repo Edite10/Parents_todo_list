@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Parents ToDO Update Item Page{% endblock title %}
+{% block description %}Parents ToDO Update Item Page{% endblock description %}
+{% block keywords %}Parents, ToDo, Update{% endblock keywords %}
+{% block content %}
+{% load static %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="text">Task Description:</label>
+    <input type="text" id="text" name="text" value="{{ task.text }}" required><br>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="CHORES" {% if task.category == "CHORES" %}selected{% endif %}>Chores</option>
+        <option value="KIDS" {% if task.category == "KIDS" %}selected{% endif %}>Kids</option>
+        <option value="ERRANDS" {% if task.category == "ERRANDS" %}selected{% endif %}>Errands</option>
+        <option value="SELF_CARE" {% if task.category == "SELF_CARE" %}selected{% endif %}>Self-Care</option>
+    </select><br>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+        <option value="TODO" {% if task.status == "TODO" %}selected{% endif %}>To Do</option>
+        <option value="IN_PROGRESS" {% if task.status == "IN_PROGRESS" %}selected{% endif %}>In Progress</option>
+        <option value="DONE" {% if task.status == "DONE" %}selected{% endif %}>Done</option>
+    </select><br>
+
+    <label for="due_date">Due Date:</label>
+    <input type="datetime-local" id="due_date" name="due_date" value="{{ task.due_date|date:'Y-m-d\\TH:i' }}"><br>
+
+    <label for="assigned_to">Assigned To:</label>
+    <input type="text" id="assigned_to" name="assigned_to" value="{{ task.assigned_to }}"><br>
+
+    <button type="submit">Update Task</button>
+</form>
+{% endblock content %}

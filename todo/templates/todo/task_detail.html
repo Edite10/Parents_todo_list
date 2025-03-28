@@ -1,0 +1,25 @@
+<!-- filepath: c:\wamp64\www\Projects\ParentsToDo\Parents_todo_list\todo\templates\todo\task_detail.html -->
+{% extends "base.html" %}
+
+{% block title %}Task Details{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Task Details</h2>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ task.text }}</h5>
+        <p class="card-text"><strong>Category:</strong> {{ task.get_category_display }}</p>
+        <p class="card-text"><strong>Status:</strong> {{ task.get_status_display }}</p>
+        <p class="card-text"><strong>Due Date:</strong> {{ task.due_date|date:"D, M d, Y H:i" }}</p>
+        <p class="card-text"><strong>Assigned To:</strong> {{ task.assigned_to }}</p>
+        <p class="card-text"><strong>Created At:</strong> {{ task.created_at|date:"D, M d, Y H:i" }}</p>
+        <p class="card-text"><strong>Last Updated:</strong> {{ task.updated_at|date:"D, M d, Y H:i" }}</p>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'view' %}" class="btn btn-secondary">Back to Task List</a>
+        <a href="{% url 'update_todo' task.id %}" class="btn btn-primary">Edit Task</a>
+    </div>
+</div>
+{% endblock %}
