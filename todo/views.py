@@ -40,6 +40,11 @@ def create_todo(request):
         return redirect("view")  # Replace 'task_list' with your URL name for the list view
     # Render the form template if the request is GET
     return render(request, "todo/create_todo.html")
+def welcome_page(request):
+    return render(request, 'todo/welcome.html')
+
+def sign_in(request):
+    return render(request, 'todo/sign_in.html')
 
 
 def update_todo(request, task_id):
