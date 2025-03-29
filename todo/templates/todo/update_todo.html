@@ -9,11 +9,9 @@
 <form method="POST">
     {% csrf_token %}
     <label for="text">Task Description:</label>
-    <br>
     <input type="text" id="text" name="text" value="{{ task.text }}" required><br>
 
     <label for="category">Category:</label>
-    <br>
     <select id="category" name="category" required>
         <option value="CHORES" {% if task.category == "CHORES" %}selected{% endif %}>Chores</option>
         <option value="KIDS" {% if task.category == "KIDS" %}selected{% endif %}>Kids</option>
@@ -22,7 +20,6 @@
     </select><br>
 
     <label for="status">Status:</label>
-    <br>
     <select id="status" name="status">
         <option value="TODO" {% if task.status == "TODO" %}selected{% endif %}>To Do</option>
         <option value="IN_PROGRESS" {% if task.status == "IN_PROGRESS" %}selected{% endif %}>In Progress</option>
@@ -30,13 +27,11 @@
     </select><br>
 
     <label for="due_date">Due Date:</label>
-    <br>
     <input type="datetime-local" id="due_date" name="due_date" value="{{ task.due_date|date:'Y-m-d\\TH:i' }}"><br>
 
     <label for="assigned_to">Assigned To:</label>
-    <br>
     <input type="text" id="assigned_to" name="assigned_to" value="{{ task.assigned_to }}"><br>
 
-    <button class="btn-blue" type="submit">Update Task</button>
+    <button type="submit">Update Task</button>
 </form>
 {% endblock content %}
