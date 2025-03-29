@@ -10,27 +10,25 @@
     <table class="table table-bordered text-center">
         <thead>
             <tr>
-                <th>Task Name</th>
+                <th class="col1">Tasks</th>
                 <th style="color: #cc0000;">To-do</th>
-                <th style="color: #ff9900">In Progress</th>
+                <th style="color: #ff9900">Progress</th>
                 <th style="color: #009e0f;">Done</th>
-                <th>Category</th>
                 <th>Actions</th>
                 
             </tr>
         </thead>
-        <tbody>
+        <tbody class="tasklist">
             {% for task in tasks %}
             <tr>
-                <td>{{ task.text }}</td>
-                <td><input type="radio" name="status_{{ task.id }}" value="To-do" {% if task.status == 'TODO' %}checked{% endif %}></td>
-                <td><input type="radio" name="status_{{ task.id }}" value="In Progress" {% if task.status == 'IN_PROGRESS' %}checked{% endif %}></td>
-                <td><input type="radio" name="status_{{ task.id }}" value="Done" {% if task.status == 'DONE' %}checked{% endif %}></td>
-                <td>{{ task.category }}</td>
+                <td class="col1">{{ task.text }}</td>
+                <td><input type="checkbox" name="status_{{ task.id }}" value="To-do" {% if task.status == 'TODO' %}checked{% endif %}></td>
+                <td><input type="checkbox" name="status_{{ task.id }}" value="In Progress" {% if task.status == 'IN_PROGRESS' %}checked{% endif %}></td>
+                <td><input type="checkbox" name="status_{{ task.id }}" value="Done" {% if task.status == 'DONE' %}checked{% endif %}></td>
                 <td>
-                    <a href="{% url 'task_detail' task.id %}" class="btn btn-info btn-sm">View</a>
-                    <a href="{% url 'update_todo' task.id %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{% url 'task_delete' task.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{% url 'task_detail' task.id %}" class="btn btn-blue btn-sm">View</a>
+                    <a href="{% url 'update_todo' task.id %}" class="btn btn-orange btn-sm">Edit</a>
+                    <a href="{% url 'task_delete' task.id %}" class="btn btn-red btn-sm">Delete</a>
                 </td>
 
             </tr>
