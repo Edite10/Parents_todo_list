@@ -9,9 +9,11 @@
 <form method="POST">
     {% csrf_token %}
     <label for="text">Task Description:</label>
+    <br>
     <input type="text" id="text" name="text" required><br>
 
     <label for="category">Category:</label>
+    <br>
     <select id="category" name="category" required>
         <option value="CHORES">Chores</option>
         <option value="KIDS">Kids</option>
@@ -20,6 +22,7 @@
     </select><br>
 
     <label for="status">Status:</label>
+    <br>
     <select id="status" name="status">
         <option value="TODO">To Do</option>
         <option value="IN_PROGRESS">In Progress</option>
@@ -27,12 +30,14 @@
     </select><br>
 
     <label for="due_date">Due Date:</label>
+    <br>
     <input type="datetime-local" id="due_date" name="due_date"><br>
 
     <label for="assigned_to">Assigned To:</label>
+    <br>
     <input type="text" id="assigned_to" name="assigned_to"><br>
 
-    <button type="submit">Create Task</button>
+    <button class="btn-green" type="submit">Create Task</button>
 </form>
 
 {% endblock content %}
