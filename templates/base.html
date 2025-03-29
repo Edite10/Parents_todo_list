@@ -31,7 +31,7 @@
                 <input type="text" name="search" class="form-control me-2" placeholder="Search tasks..." value="{{ request.GET.search }}">
                 <button type="submit" class="btn btn-outline-secondary">Search</button>
             </form>
-            <a href="{% url 'create_todo' %}" class="btn btn-primary">Create New Task</a>
+            <a href="{% url 'create_todo' %}" class="btn btn-green">Create New Task</a>
         </div>
 
         {% if messages %}
@@ -50,7 +50,7 @@
         
     </main>
 
-    <footer class="text-center py-3 mt-4 bg-light">
+    <footer class="text-center py-3 mt-4 ">
         <p>&copy; 2025 To-do List. All rights reserved.</p>
     </footer>
     
