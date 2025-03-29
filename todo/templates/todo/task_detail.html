@@ -18,8 +18,8 @@
         <p class="card-text"><strong>Last Updated:</strong> {{ task.updated_at|date:"D, M d, Y H:i" }}</p>
     </div>
     <div class="card-footer">
-        <a href="{% url 'view' %}" class="btn btn-secondary">Back to Task List</a>
-        <a href="{% url 'update_todo' task.id %}" class="btn btn-primary">Edit Task</a>
+        <a href="{% url 'view' %}" class="btn btn-secondary btn-blue">Back to Task List</a>
+        <a href="{% url 'update_todo' task.id %}" class="btn btn-primary btn-yellow">Edit Task</a>
     </div>
 </div>
 {% endblock %}
